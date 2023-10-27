@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <Title>Walli Business</title>
+    <link rel="icon" type="image/x-icon" href="Icone W.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0
+        }
+
+        body {
+            background-color: #fffcea;
+
+        }
+
+        .inicio {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            font-family: 'EB Garamond', serif;
+
+        }
+
+        .imagens a:-webkit-any-link {
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .imagens2 a:-webkit-any-link {
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .item-menu a:-webkit-any-link {
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        nav {
+            align-items: center;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .item-menu li {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            margin: 1px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            list-style-type: none;
+        }
+
+        .item-menu li a:hover {
+            font-size: 18px;
+            transition: .5s;
+            border-bottom: 1px solid #000;
+        }
+
+        .fotinha {
+            background-color: rgb(226, 226, 226);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fotinha h1 {
+            font-size: 80px;
+        }
+
+        .texto-foto {
+            text-align: center;
+        }
+
+        .fotinha h1 p button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .texto-foto p {
+            font-size: 20px;
+        }
+
+        .texto-foto button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold
+        }
+
+        .texto-foto button:hover {
+            background-color: #0056b3;
+
+        }
+
+        .texto-foto button:focus {
+            outline: none;
+
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+
+        }
+
+        .texto-foto button:disabled {
+            background-color: #ccc;
+
+            color: #666;
+
+            cursor: not-allowed;
+
+        }
+
+
+        .corpo {
+            text-align: center;
+            margin: 100px;
+        }
+
+        .corpo h1 {
+            font-size: 50px;
+            color: #ffb62b;
+        }
+
+        .corpo h4 {
+            color: #9bb7bb;
+        }
+
+        .corpo p {
+            font-size: 20px;
+        }
+
+        .imagens {
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .imagens img {
+            width: 50%;
+        }
+
+        .imagens2 img {
+            width: 50%;
+        }
+
+        .imagens button {
+            background-color: #007bff;
+            color: #ff0000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .texto-imagens {
+            display: inline-block;
+            text-align: Center;
+            padding: 100px;
+            width: 50%;
+
+        }
+
+        .texto-imagens button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold
+        }
+
+        .imagens button:hover {
+            background-color: #0056b3;
+
+        }
+
+        .space {
+            color: #ccc;
+        }
+
+        .borda-personalizada {
+            border: 100px dashed blue;
+        }
+
+        .final {
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 10px #000000;
+        }
+
+        .final::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        footer {
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            list-style-type: none;
+
+        }
+
+        footer li {
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            list-style-type: none;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        footer p {
+            margin: 30px;
+        }
+
+        .texto-sobre-imagem {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffb62b;
+            font-size: 50px;
+            font-weight: bold;
+            z-index: 3;
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .texto-sobre-imagem p {
+            display: flex;
+            text-align: center;
+        }
+
+        .texto-sobre-imagem button {
+            display: inline-block;
+            align-items: center;
+            text-align: center;
+            background-color: #ffb52b46;
+            color: #ffffff9f;
+            border: none;
+            padding: 10px 500px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold
+        }
+
+
+        .imagens2 {
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+        }
+
+        .texto-imagens2 {
+            padding: 100px;
+            width: 50%;
+        }
+
+        .imagens2 img {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+
+        }
+
+        .imagens2 button {
+            background-color: #007bff;
+            color: #ff0000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .texto-imagens2 button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .imagens2 button:hover {
+            background-color: #0056b3;
+
+        }
+
+        .space2 {
+            color: #ccc;
+        }
+
+        .imagens-texto {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        .container2 {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fffcea;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+
+        }
+
+        .container2 header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container2 h1 {
+            color: #ffb62b;
+        }
+
+        .container2 article {
+            font-size: 20px;
+            color: #3f3f3f;
+        }
+
+        .container2 ul {
+            list-style: disc;
+            margin-left: 20px;
+            list-style-type: none;
+            color: #000000;
+        }
+
+        #btnVoltarAoTopo {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 9px 9px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+
+        }
+
+        .texto-sobre-imagem a:-webkit-any-link {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.543);
+        }
+
+        .mapa {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="inicio">
+        <img src="Icone W.png" width="100px" height="100px">
+        <h1>Walli.business</h1>
+        <nav>
+            <ul class="item-menu">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="quem-somos.html">Quem somos</a>
+                </li>
+                <li>
+                    <a id="scrollButton">Mapa virtual</a>
+                </li>
+                <li>
+                    <a href="contatoW.html">Contato</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="fotinha">
+        <img src="https://mapasaudemental.com.br/wp-content/uploads/2020/05/girl-banner-mapa-mental.png" height="50%"
+            width="25%">
+        <div class="texto-foto">
+            <h1>Seja bem-vindo</h1>
+            <p>Aqui você vai encontrar diversas formas de ajuda</p>
+            <button>continue</button>
+        </div>
+    </div>
+    <div class="corpo">
+        <h4>MAPA DA SAÚDE MENTAL</h4>
+        <h1>O que você vai encontrar por aqui?</h1>
+        <br>
+        <p>Tão importante quanto saber a hora de procurar ajuda é saber onde encontrá-la. </p>
+        <br>
+        <p>Neste site você vai encontrar serviços públicos de saúde mental disponíveis em todo território <br> nacional,
+            além de serviços de acolhimento e atendimento gratuitos ou voluntários realizados <br> por ONGs,
+            instituições filantrópicas, clínicas escola, entre outros.</p>
+        <br>
+        <p>O objetivo é unir pessoas em sofrimento mental aos serviços de cuidado disponíveis online ou <br> em sua
+            região.</p>
+    </div>
+    <div class="imagens-texto">
+        <div class="imagens">
+            <img src="https://conteudo.imguol.com.br/c/noticias/41/2015/08/10/buddy-o-pequeno-robo-buddy-com-56-centimetros-de-altura-e-cinco-quilos-funciona-como-uma-especie-de-assistente-domestico-brinquedo-e-seguranca-ele-e-capaz-de-reconhecer-e-interagir-com-todos-os-1439245984225_300x200.jpg"
+                height="50%" width="60%">
+
+            <div class="texto-imagens">
+                <h1>Precisa de ajuda e não sabe como pedir?</h1>
+                <p>Aqui voce pode encontrar varias formas de atendimento<br>
+                    como presencial e online.</p>
+                <button>
+                    <a href="loguin.html">contato</a>
+                </button>
+            </div>
+        </div>
+        <div class="imagens2">
+
+
+            <div class="texto-imagens2">
+                <h1>Precisa de ajuda e não sabe como pedir?</h1>
+                <p>Aqui voce pode encontrar varias formas de atendimento<br>
+                    como presencial e online.</p>
+                <button>
+                    <a href="loguin.html">contato</a>
+                </button>
+            </div>
+
+            <img src="IMG-20230919-WA0014.jpg" height="50%">
+        </div>
+    </div>
+    <div class="mapa" id="mapa">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1932.8341972238059!2d-46.7669748696519!3d-23.54510704623888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ceff42d661ca51%3A0xfdfccb3aa8ca8109!2zRnVuZGHDp8OjbyBCcmFkZXNjbw!5e1!3m2!1spt-BR!2sbr!4v1697468595437!5m2!1spt-BR!2sbr"
+            width="70%" height="800px" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="container2">
+        <header>
+            <h1>Saúde Mental</h1>
+        </header>
+        <article>
+            <p>A saúde mental é tão importante quanto a saúde física. Ela engloba o bem-estar emocional, psicológico e
+                social de uma pessoa. Manter uma boa saúde mental é fundamental para uma vida equilibrada e
+                satisfatória.</p>
+            <p>Existem várias maneiras de cuidar da sua saúde mental:<br><br></p>
+            <ul>
+                <li>*Praticar a autorreflexão e o autoconhecimento.</li>
+                <li>*Estabelecer conexões sociais saudáveis e apoio emocional.</li>
+                <li>*Gerenciar o estresse e as emoções de forma construtiva.</li>
+                <li>*Procurar ajuda profissional quando necessário.</li>
+            </ul>
+            <p><br>Lembre-se de que a saúde mental é um processo contínuo e que todos podem enfrentar desafios em algum
+                momento. Não hesite em buscar apoio e recursos para cuidar de si mesmo.</p>
+        </article>
+
+    </div>
+    <div class="final">
+        <img src="https://ciclovivo.com.br/wp-content/uploads/2018/02/iStock-521982322.jpg" height="95%" width="95%"
+            alt="foto">
+        <div class="texto-sobre-imagem">
+            <p>Caso precise de algo <br>
+                nos envie uma mensagem nas redes socias a baixo,<br>
+                ou entre em contato no nosso site.</p>
+            <button>contato</button>
+        </div>
+    </div>
+    
+
+
+    <footer>
+        <p>
+            Esse site foi criado apenas para o trabalho da fundacao bradesco
+        </p>
+        &copy; Feito pelo Fabricio 1 ano E
+        <ul>
+            <li><a href="https://www.facebook.com" target="_blank">
+                    <img src="https://www.sitionovo.rn.leg.br/imagens/facebook.png" alt="Facebook" width="20px"
+                        target="_blank">
+                </a></li>
+            <li><a href="https://twitter.com" target="_blank">
+                    <img src="https://imagepng.org/wp-content/uploads/2018/08/twitter-icone.png" alt="Twitter"
+                        width="20px" target="_blank">
+                </a></li>
+            <li><a href="https://www.instagram.com/Walli.Business" target="_blank">
+                    <img src="https://www.pngmart.com/files/13/Instagram-Logo-PNG-Free-Download-1.png" alt="Instagram"
+                        width="25px" target="_blank">
+                </a></li>
+        </ul>
+    </footer>
+    <div class="butao">
+        <button id="btnVoltarAoTopo"> <img
+                src="kisspng-arrow-computer-icons-5ae5dcc8d81a86.7467748015250137048852 (1).png" alt="seta" width="20px"
+                height="20px"></button>
+    </div>
+    <script>
+
+        const btnVoltarAoTopo = document.getElementById('btnVoltarAoTopo');
+
+
+        window.addEventListener('scroll', () => {
+            if (document.documentElement.scrollTop > 100) {
+                btnVoltarAoTopo.style.display = 'block';
+            } else {
+                btnVoltarAoTopo.style.display = 'none';
+            }
+        });
+
+
+        btnVoltarAoTopo.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+
+        var scrollButton = document.getElementById('scrollButton');
+        var section2 = document.getElementById('mapa');
+
+        scrollButton.addEventListener('click', function () {
+            section2.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+    </div>
+</body>
+
+</html>
